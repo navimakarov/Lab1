@@ -52,6 +52,12 @@ jobs:
         name: flask-app-artifact
         path: flask_app.zip
 
+    # Install Java 17
+    - name: Set up JDK 17
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+
     - name: Run SonarQube Scan
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
