@@ -8,3 +8,4 @@ def get_product(productId: int):
     return {"id": str(productId), "name": f"{productId} name"}
 
 # 1
+# 2
