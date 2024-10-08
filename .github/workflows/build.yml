@@ -51,3 +51,11 @@ jobs:
       with:
         name: flask-app-artifact
         path: flask_app.zip
+
+    - name: Run SonarQube Scan
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      run: |
+        curl -sSLo sonar-scanner.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.6.2.2472-linux.zip
+        unzip sonar-scanner.zip
+        ./sonar-scanner-*/bin/sonar-scanner
